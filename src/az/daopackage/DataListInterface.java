@@ -5,8 +5,8 @@
  */
 package az.daopackage;
 
-import az.javaapplication.AdvancedSearch1;
-import az.javaapplication.DataList;
+import az.modelPackage.AdvancedSearch1;
+import az.modelPackage.DataList;
 import java.util.List;
 
 /**

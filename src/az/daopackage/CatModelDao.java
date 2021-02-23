@@ -5,8 +5,7 @@
  */
 package az.daopackage;
 
-import az.javaapplication.CatData;
-import az.javaapplication.SiteClass;
+import az.modelPackage.CatData;
 import java.util.List;
 
 /**
@@ -14,11 +13,7 @@ import java.util.List;
  * @author ipi
  */
 public interface CatModelDao {
-     List<SiteClass> getSiteClassList() throws Exception;
      
-     boolean addCatModel(CatData catData) throws Exception;
-     
-     CatData getCatByName(Long catId) throws Exception;
      
      List<CatData> getCatModelList() throws Exception;
 

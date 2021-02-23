@@ -14,12 +14,11 @@ import java.net.URI;
 
 import java.util.List;
 
-import az.javaapplication.AdvancedSearch1;
-import az.javaapplication.CatData;
-import az.javaapplication.DataList;
-import az.javaapplication.Item;
-
-import az.javaapplication.SiteClass;
+import az.modelPackage.AdvancedSearch1;
+import az.modelPackage.CatData;
+import az.modelPackage.DataList;
+import az.modelPackage.Item;
+import az.modelPackage.SiteClass;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 
@@ -49,7 +48,7 @@ public class ListJFrame extends javax.swing.JFrame {
 
         this.catModelDao = catModelDao;
         this.dataListface = dataListface;
-        
+
         try {
             List<DataList> hesab = dataListface.getDataList();
             showDataHesabat(hesab);
@@ -560,16 +559,16 @@ public class ListJFrame extends javax.swing.JFrame {
     private void showSiteCombo() {
         try {
             List<CatData> catList = catModelDao.getCatModelList();
-            DefaultComboBoxModel guestsCombo = (DefaultComboBoxModel) jComboBox1.getModel();
+            DefaultComboBoxModel catagCombo = (DefaultComboBoxModel) jComboBox1.getModel();
             for (CatData catData : catList) {
-                guestsCombo.addElement(new Item(Long.valueOf(catData.getId()),catData.getName()));
-                       
+                catagCombo.addElement(new Item(Long.valueOf(catData.getId()), catData.getName()));
+
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-    
+
     private void showDataHesabat(List<DataList> hesabDatas) {
         try {
             DefaultTableModel model = new DefaultTableModel() {
